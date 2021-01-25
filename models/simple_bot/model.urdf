@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- Revolute-Revolute Manipulator -->
+<robot name="rrbot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
+  <link name="world"/>
+
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="link1"/>
+  </joint>
+
+  <!-- Base Link -->
+  <link name="link1">
+    <collision>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 2"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 2"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 1" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="0.334166667" ixy="0.0" ixz="0.0" iyy="0.334166667" iyz="0.0" izz="0.001666667"/>
+    </inertial>
+    <plugin name="model_push" filename="libmodel_push.so"/>
+  </link>
+
+  <!-- <joint name="joint1" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 0.1 1.95" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.7"/>
+  </joint> -->
+
+  <!-- Middle Link
+  <link name="link2">
+    <collision>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 1"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0.45" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="0.084166667" ixy="0.0" ixz="0.0" iyy="0.084166667" iyz="0.0" izz="0.001666667"/>
+    </inertial>
+  </link> -->
+</robot>
