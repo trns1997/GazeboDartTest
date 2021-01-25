@@ -1,10 +1,3 @@
-//////////////////////////////////////////////////////////////////////////////////////
-/// \brief TestBenchPlugin is a Gazebo Model Plugin that creates a pipeline
-///        for Gazebo and accesses the necessary shms to get target values for control.
-///
-/// \copyright Wandercraft
-//////////////////////////////////////////////////////////////////////////////////////
-
 #ifndef TEST_BENCH_PLUGIN
 #define TEST_BENCH_PLUGIN
 
